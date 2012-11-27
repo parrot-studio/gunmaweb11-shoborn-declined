@@ -1,0 +1,217 @@
+= ((*(´･ω･`)としたー*))は衰退しました
+
+: subtitle
+  for Gunma.web #11 (2012/11/23)
+: author
+  ぱろっと (@parrot_studio)
+: allotted-time
+  5m
+:presentation-date
+  2012/11/23
+: theme
+  lightning-clear-blue
+
+= Profile
+
+* ぱろっと（(('tag:small:T.Tachiki'))）
+* @parrot_studio
+* parrot-studio.com
+* プログラマっぽい何か
+
+#= タイトルについての注意事項
+#
+#小説もアニメも見てないので\n話の内容を全く知りません\nΣ(・ω・ノ)ノ
+
+= 今日のお話
+
+  # image
+  # src = twitter-bird-blue-on-white.png
+  # relative_width = 50
+
+= ((*2012/09/05*))
+
+= 2012/09/05
+
+(('tag:x-large:Twitter API\\n((*v1.1*))リリース'))\n(('note:(https://dev.twitter.com/blog/current-status-api-v1.1)'))
+
+= 主な変更点1
+
+* 全APIでOAuth認証が必須
+* API制限が1時間から15分単位
+* API制限の細分化と回数変更
+(('note:(http://www.atmarkit.co.jp/ait/articles/1209/26/news120.html)'))
+
+= 主な変更点2
+
+* 「Display Guidelines」への対応が必須
+* ((*クライアントアプリ*))ユーザ数の制限
+  * サービス認証はOK
+(('note:(http://www.atmarkit.co.jp/ait/articles/1209/26/news120.html)'))
+
+= 要するに・・・
+
+((*ユーザ*))は何も気にしなくていい\n
+((*開発者*))は面倒になった(´-ω-)
+
+= API制限関連
+
+* API制限が1時間から15分単位
+* API制限の細分化と回数変更
+
+= どうということはない\n(`･ω･´)
+
+= だが\nしかし
+
+= (ﾟдﾟ)ﾏｽﾞｰ？
+
+ # blockquote
+ 全APIでOAuth認証が必須
+
+＝検索APIも認証必須・・・？
+
+= ((*(´･ω･`)としたー*)) とは？
+
+  # blockquote
+  検索APIから顔文字を使ったTweetを取得して表示する、((*JavaScriptベース*))のWebアプリ
+
+(('note:(http://parrot-studio.com/shoborn/)'))
+
+= ((*OAuth 1.1aが必須*)) とは？
+
+毎リクエストごとに\n((*キーによる暗号化*))が必須\n(('note:(OAuth 2.0だとそうでもない)'))
+
+= ま\nず\nい
+
+= JavaScriptアプリだとキーが丸見え＼(^o^)／
+
+= 対策するならば・・・
+
+サーバサイドでAPIと通信させて返す手もあるが、
+それは((*JavaScriptベース*))ではない\n
+(('note:(Node.jsとか言い出さないように)'))
+
+= 仕方ない
+
+= 新しい仕様を調べるお・・・
+
+  # image
+  # src = search_api.png
+  # relative_width = 90
+
+(('note:(https://dev.twitter.com/docs/using-search)'))
+
+= あれ・・・？
+
+v1.1でも認証なし検索あるやん\nΣ(ﾟДﾟ)ｶﾞｰﾝ
+
+  # image
+  # src = search_api2.png
+  # relative_width = 90
+
+= 検索API比較
+
+  # RT
+  ,既存,OAuth\n認証あり
+  URI,(('tag:x-small:search.twitter.com/search.json')),(('tag:x-small:GET search/tweets'))
+  制限,(('tag:small:IPごと')),(('tag:x-small:アカウントごと'))
+  結果,(('tag:small:大雑把')),(('tag:small:厳密'))
+  範囲,(('tag:small:最近1週間くらい')),(('tag:small:任意の時点'))
+
+= 使い分けできるね\n(`･ω･´)
+
+= 結論？
+
+(('tag:x-large:((*(´･ω･`)としたー*))は衰退しませんでした？'))
+
+= but
+
+= "Display Guidelines"への対応が必須
+
+= Display Guidelines
+
+  # image
+  # src = display.png
+  # relative_width = 100
+
+(('note:(https://dev.twitter.com/terms/display-requirements)'))
+
+= 現状
+
+  # image
+  # src = shoborn.png
+  # relative_width = 70
+
+これは対応しないといかんのでどうしたものか・・・(´-ω-)
+
+= とはいえ
+
+= "(´･ω･`)としたー"程度はどうでもよろしい
+
+= ((*クライアントアプリ開発者*))には大打撃
+
+= クライアントアプリ関連
+
+* 「Display Guidelines」への対応が必須
+* アプリユーザ数の制限
+  * 基本は10万ユーザまで
+  * いくつか例外規定あり
+
+= これで何が起こるのか？
+
+= 時間の相対表示強制
+
+(('note:(※これはWebの表示だが、twiccaやついっぷる等が対応済)'))
+
+  # image
+  # src = nhkpr.jpg
+  # relative_width = 100
+
+PRたんの「3時」がどの程度ずれていたのかわからない(´･ω･`)
+
+= こういう設定は\nもうできなくなる
+
+  # image
+  # src = yorufukurou.png
+  # relative_width = 100
+
+(('note:(夜フクロウ バージョン 2.76)'))
+
+= 10万アカウントの制限
+
+  # image
+  # src = win8.png
+  # relative_width = 80
+
+(('note:(http://news.itmedia.co.jp/20121113/001025)'))
+
+= そして削除へ・・・
+
+  # image
+  # src = win8_2.png
+  # relative_width = 90
+
+(('note:(http://www.itmedia.co.jp/news/articles/1211/19/news042.html)'))
+
+= これはめんどい・・・(´-ω-)
+
+= 開発終了したクライアント
+
+* Twit
+* P3:PeraPeraPrv
+* Echofon（デスクトップ版）
+* ラーメン大陸
+* Tweetbot for Mac（α版）
+  * etc...
+
+= つまり・・・
+
+* Twitterエコシステムから「多様性」が失われた
+* ユーザが環境を選ぶのではなく、Twitter社が描く環境への強制
+
+(('tag:x-small:広告収益とかいろいろあるのはわかる・・・が・・・(´-ω-)'))
+
+= まとめ
+
+(('tag:large:((*(´･ω･`)としたー*))は衰退しませんでしたが、\\n((*Twitterクライアント開発*))は衰退しました'))
+
+= ありがとうございました
