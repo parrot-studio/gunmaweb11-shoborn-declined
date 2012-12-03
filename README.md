@@ -3,6 +3,7 @@
 Description
 ---------------
 - for Gunma.web #11 (2012/11/23)
+- Detail : http://blog.parrot-studio.com/2012/12/gunmaweb11-shoborn-declined/
 - rabbit : http://rabbit-shocker.org/
 
 License
